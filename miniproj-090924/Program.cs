@@ -9,6 +9,18 @@ bool DoesExist(int[,] mat)
     return false;
 }
 
+int SaisieNombre()
+{
+    int n;
+    while (Int32.TryParse(Console.ReadLine(), out n) || n <= 0)
+    {
+        Console.WriteLine("should be positive integer");
+        
+    }
+
+    return n;
+}
+
 int[,] InitMatrice(int ligne, int colonne)
 {
     int[,] matrice = new int[3, 3];
@@ -69,4 +81,10 @@ int NbValeursSup7(int[,] mat, int i0, int j0)
 
     return n;
 }
+
+
+// main
+int i = 1;
+int nbIterations = 0;
+
 
