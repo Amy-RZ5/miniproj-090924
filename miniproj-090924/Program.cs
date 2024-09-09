@@ -103,7 +103,7 @@ static void CorrectionMatrice(int[,] mat)
                 newValue /= 2;
             }
             //si c'est inf à 4 mettre à 0 (continue) sinon ne rien faire et passer à la suite des executions.
-            else if(nbVoisinSup7 < 4) continue;
+            else if(nbVoisinSup7 < 2) continue;
 
             matCorriger[i, j] = newValue;
         }
@@ -131,6 +131,7 @@ int colonne = SaisieNombre();
 int[,] matrice = InitMatrice(ligne, colonne);
 
 Console.WriteLine("Combien de fois voulez-vous tenter de corriger la matrice ?");
+Console.WriteLine($"Pour une petite (< à 10*10) matrice 1 ou 2, une moyenne (< 50*50) 3 à 5, et plus à vous de voir !");
 nbIterations = SaisieNombre();
 
 Console.WriteLine("Voici votre matrice de début :\n");
@@ -145,8 +146,9 @@ while (i <= nbIterations)
 
     Console.WriteLine("Voici votre matrice corrigée :\n");
     Affichage(matrice); // à voir si tu veux modifier le nom du tableau
-    Console.WriteLine("Appuyez sur une touche pour afficher une nouvelle itération");
+    Console.WriteLine("\nAppuyez sur une touche pour afficher une nouvelle itération\n\n\n");
     Console.ReadKey();
     i++;
 }
 
+System.Environment.Exit(0);
