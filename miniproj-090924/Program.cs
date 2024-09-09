@@ -1,6 +1,6 @@
 ﻿Random rand = new Random();
 
-bool DoesExist(int[,] mat)
+static bool DoesExist(int[,] mat)
 {
     if (mat != null && mat.Length > 0)
         return true;
@@ -62,7 +62,7 @@ int[,] Copy(int[,] matCorr, int[,] matInit)
     return matInit;
 }
 
-int NbValeursSup7(int[,] mat, int i0, int j0)
+static int NbValeursSup7(int[,] mat, int i0, int j0)
 {
     //verifier que la matrice existe et est correcte
     if (!DoesExist(mat)) return -1;
@@ -87,6 +87,49 @@ int NbValeursSup7(int[,] mat, int i0, int j0)
     return n;
 }
 
+static void CorrectionMatrice(int[,] mat)
+{
+    //pas besoin de retourné un tableau car la valeur de la memoir est renvoyer
+    
+    //crée une seconde matrice pour pouvoir modifier sans "endomager" la matrice initiale.
+    int[,] matCorriger = new int[mat.GetLength(0),mat.GetLength(1)];
+    // pas besoin de copier la matrice car, les valeurs égale à 0 suffise car nous ne regarderons pas la valeur
+    // contenu de la matrice
+
+    //parcourir l'ensemble de la matrice
+    for (int i = 0; i < mat.GetLength(0); i++)
+    {
+        for (int j = 0; j < mat.GetLength(1); j++)
+        {
+            //récupéré la valeur de mat
+            int newValue = mat[i, j];
+            
+            //récupéré le nombre de voisin
+            int nbVoisinSup7 = NbValeursSup7(mat, i, j);
+            
+            //si c'est 2 ou 3
+            if (nbVoisinSup7 < 4 && nbVoisinSup7 > 1)
+            {
+                //déviser par deux sa valeur
+                newValue /= 2;
+            }
+            //si c'est inf à 4 mettre à 0 (continue) sinon ne rien faire et passer à la suite des executions.
+            else if(nbVoisinSup7 < 4) continue;
+
+            matCorriger[i, j] = newValue;
+        }
+    }
+    
+    //remplacer la matrice initiale par la matrice corrigé
+    for(int i = 0; i < mat.GetLength(0); i++)
+    {
+        for(int j = 0; j < mat.GetLength(1); j++)
+        {
+            mat[i, j] = matCorriger[i, j];
+        }
+    }
+    //vue que c'est un emplacement mémoire, pas besoin de retourne de matrice
+}
 
 // main
 int i = 1;
