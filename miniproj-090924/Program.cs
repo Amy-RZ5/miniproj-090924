@@ -12,6 +12,7 @@ bool DoesExist(int[,] mat)
 int SaisieNombre()
 {
     int n;
+    Console.WriteLine("Ce nombre doit être positif");
     while (Int32.TryParse(Console.ReadLine(), out n) || n <= 0)
     {
         Console.WriteLine("should be positive integer");
@@ -86,5 +87,25 @@ int NbValeursSup7(int[,] mat, int i0, int j0)
 // main
 int i = 1;
 int nbIterations = 0;
+Console.WriteLine("Entrez le nombre de lignes de la matrice");
+int ligne = SaisieNombre();
+Console.WriteLine("Entrez le nombre de colonnes de la matrice");
+int colonne = SaisieNombre();
 
+int[,] matrice = InitMatrice(ligne, colonne);
+
+Console.WriteLine("Combien de fois voulez-vous tenter de corriger la matrice ?");
+nbIterations = SaisieNombre();
+
+Console.WriteLine("Voici votre matrice de début :\n");
+Affichage(matrice);
+
+while (i <= nbIterations)
+{
+    Console.WriteLine($"C'est votre {i}e itération");
+    // petite animation pour le calcul ?
+    Console.WriteLine("Appuyez sur une touche pour afficher une nouvelle itération");
+    Console.ReadKey();
+    i++;
+}
 
