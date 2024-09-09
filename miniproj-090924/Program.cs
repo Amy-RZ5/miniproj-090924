@@ -76,12 +76,13 @@ static int NbValeursSup7(int[,] mat, int i0, int j0)
     return n;
 }
 
-static void CorrectionMatrice(int[,] mat)
+static bool[,] CorrectionMatrice(int[,] mat)
 {
     //pas besoin de retourné un tableau car la valeur de la memoir est renvoyer
     
     //crée une seconde matrice pour pouvoir modifier sans "endomager" la matrice initiale.
     int[,] matCorriger = new int[mat.GetLength(0),mat.GetLength(1)];
+    bool[,] matCorrigerBools = new bool[mat.GetLength(0),mat.GetLength(1)];
     // pas besoin de copier la matrice car, les valeurs égale à 0 suffise car nous ne regarderons pas la valeur
     // contenu de la matrice
 
@@ -106,6 +107,7 @@ static void CorrectionMatrice(int[,] mat)
             else if(nbVoisinSup7 < 2) continue;
 
             matCorriger[i, j] = newValue;
+            matCorrigerBools[i, j] = true;
         }
     }
     
@@ -117,7 +119,9 @@ static void CorrectionMatrice(int[,] mat)
             mat[i, j] = matCorriger[i, j];
         }
     }
-    //vue que c'est un emplacement mémoire, pas besoin de retourne de matrice
+    //vue que c'est un emplacement mémoire, pas besoin de retourne de matrice seulement
+    //la matrice avec les emplacement modifier.
+    return matCorrigerBools;
 }
 
 // main
