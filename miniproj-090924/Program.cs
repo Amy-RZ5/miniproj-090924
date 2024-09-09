@@ -71,7 +71,7 @@ int NbValeursSup7(int[,] mat, int i0, int j0)
         }
     }
     
-    //Netourner le nombre de case au tour avec une valeur de 7 ou +
+    //Retourner le nombre de case au tour avec une valeur de 7 ou +
     return n;
 }
 
