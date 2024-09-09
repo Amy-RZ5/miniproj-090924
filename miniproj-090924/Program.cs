@@ -139,6 +139,7 @@ while (i <= nbIterations)
 {
     Console.WriteLine($"C'est votre {i}e itération");
     // insérer fonction correction calcul
+    CorrectionMatrice(matrice);
     // petite animation pour le calcul ?
 
     Console.WriteLine("Voici votre matrice corrigée :\n");
