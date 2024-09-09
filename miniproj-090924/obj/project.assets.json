@@ -8,25 +8,24 @@
     "net8.0": []
   },
   "packageFolders": {
-    "/Users/amyrazafi/.nuget/packages/": {}
+    "/home/ambroise/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/amyrazafi/RiderProjects/miniproj-090924/miniproj-090924/miniproj-090924.csproj",
+      "projectUniqueName": "/home/ambroise/RiderProjects/miniproj-090924/miniproj-090924/miniproj-090924.csproj",
       "projectName": "miniproj-090924",
-      "projectPath": "/Users/amyrazafi/RiderProjects/miniproj-090924/miniproj-090924/miniproj-090924.csproj",
-      "packagesPath": "/Users/amyrazafi/.nuget/packages/",
-      "outputPath": "/Users/amyrazafi/RiderProjects/miniproj-090924/miniproj-090924/obj/",
+      "projectPath": "/home/ambroise/RiderProjects/miniproj-090924/miniproj-090924/miniproj-090924.csproj",
+      "packagesPath": "/home/ambroise/.nuget/packages/",
+      "outputPath": "/home/ambroise/RiderProjects/miniproj-090924/miniproj-090924/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/amyrazafi/.nuget/NuGet/NuGet.Config"
+        "/home/ambroise/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "/usr/local/share/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -65,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
