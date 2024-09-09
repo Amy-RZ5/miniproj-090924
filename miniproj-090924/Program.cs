@@ -72,7 +72,7 @@ static int NbValeursSup7(int[,] mat, int i0, int j0)
         }
     }
     
-    //Retourner le nombre de case au tour avec une valeur de 7 ou +
+    //Retourner le nombre de case autour avec une valeur de 7 ou +
     return n;
 }
 
@@ -122,7 +122,7 @@ static void CorrectionMatrice(int[,] mat)
 
 // main
 int i = 1;
-int nbIterations = 0;
+int nbIterations;
 Console.WriteLine("Entrez le nombre de lignes de la matrice");
 int ligne = SaisieNombre();
 Console.WriteLine("Entrez le nombre de colonnes de la matrice");
@@ -142,7 +142,7 @@ while (i <= nbIterations)
     // insérer fonction correction calcul
     // petite animation pour le calcul ?
 
-    Console.WriteLine("Voici votre matrice corrigée :");
+    Console.WriteLine("Voici votre matrice corrigée :\n");
     Affichage(matrice); // à voir si tu veux modifier le nom du tableau
     Console.WriteLine("Appuyez sur une touche pour afficher une nouvelle itération");
     Console.ReadKey();
