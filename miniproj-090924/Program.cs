@@ -49,18 +49,6 @@ void Affichage(int[,] mat)
     }
 }
 
-int[,] Copy(int[,] matCorr, int[,] matInit)
-{
-    int[,] result = null;
-    if (DoesExist(matCorr)&& DoesExist(matInit))
-    {
-        for (int i = 0; i < 3; i++)
-        {
-            for(int j = 0; j < 3; j++) matInit[i, j] = matCorr[i, j];
-        }
-    }
-    return matInit;
-}
 
 int NbValeursSup7(int[,] mat, int i0, int j0)
 {
@@ -107,7 +95,11 @@ Affichage(matrice);
 while (i <= nbIterations)
 {
     Console.WriteLine($"C'est votre {i}e itération");
+    // insérer fonction correction calcul
     // petite animation pour le calcul ?
+
+    Console.WriteLine("Voici votre matrice corrigée :");
+    Affichage(matrice); // à voir si tu veux modifier le nom du tableau
     Console.WriteLine("Appuyez sur une touche pour afficher une nouvelle itération");
     Console.ReadKey();
     i++;
