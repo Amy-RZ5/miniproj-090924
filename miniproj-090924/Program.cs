@@ -119,6 +119,7 @@ static bool[,] CorrectionMatrice(int[,] mat)
             mat[i, j] = matCorriger[i, j];
         }
     }
+    
     //vue que c'est un emplacement mémoire, pas besoin de retourne de matrice seulement
     //la matrice avec les emplacement modifier.
     return matCorrigerBools;
@@ -143,7 +144,7 @@ Affichage(matrice);
 
 while (i <= nbIterations)
 {
-    Console.WriteLine($"C'est votre {i}e itération");
+    Console.WriteLine($"C'est votre {i}e itération");   
     // insérer fonction correction calcul
     CorrectionMatrice(matrice);
     // petite animation pour le calcul ?
