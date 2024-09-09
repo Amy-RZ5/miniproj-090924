@@ -1,6 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-Random rand = new Random();
+﻿Random rand = new Random();
 
 bool DoesExist(int[,] mat)
 {
@@ -66,20 +64,26 @@ int[,] Copy(int[,] matCorr, int[,] matInit)
 
 int NbValeursSup7(int[,] mat, int i0, int j0)
 {
+    //verifier que la matrice existe et est correcte
+    if (!DoesExist(mat)) return -1;
+    
+    //n correspond au nombre de valeurs voisine supérieures à 7
     int n = 0;
-    if (DoesExist(mat))
+    
+    //On parcours l'ensemble de la matrice.
+    for (int i = i0 - 1; i <= i0 + 1; i++)
     {
-        for (int i = i0 - 1; i <= i0 + 1; i++)
+        for (int j = j0 - 1; j <= j0 + 1; j++)
         {
-            for (int j = j0 - 1; j <= j0 + 1; j++)
-            {
-                if (i == i0 && j == j0)
-                    j++;
-                if (mat[i, j] >= 7) n++;
-            }
+            //Verficication que la case du tableau est bien dans la matrice
+            if (i < 0 || j < 0 || i >= mat.GetLength(0) || j >= mat.GetLength(1) || (i == i0 && j == j0)) continue;
+            
+            //Si la case qui est verifier à une valeur supperieur à 7, rajouter 1 au compteur.
+            if (mat[i, j] >= 7) n++;
         }
     }
-
+    
+    //Netourner le nombre de case au tour avec une valeur de 7 ou +
     return n;
 }
 
