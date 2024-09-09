@@ -11,9 +11,9 @@ int SaisieNombre()
 {
     int n;
     Console.WriteLine("Ce nombre doit être positif");
-    while (Int32.TryParse(Console.ReadLine(), out n) || n <= 0)
+    while (!Int32.TryParse(Console.ReadLine(), out n) || n <= 0)
     {
-        Console.WriteLine("should be positive integer");
+        Console.WriteLine("Should be positive integer");
         
     }
 
@@ -22,7 +22,7 @@ int SaisieNombre()
 
 int[,] InitMatrice(int ligne, int colonne)
 {
-    int[,] matrice = new int[3, 3];
+    int[,] matrice = new int[ligne, colonne];
     for (int i = 0; i < ligne; i++)
     {
         for (int j = 0; j < colonne; j++)
@@ -42,6 +42,7 @@ void Affichage(int[,] mat)
         {
             for (int j = 0; j < mat.GetLength(1); j++)
             {
+                if (mat[i, j] < 10) Console.Write("0");
                 Console.Write(mat[i, j] + " ");
             }
             Console.WriteLine();
