@@ -66,5 +66,7 @@ int NbValeursSup7(int[,] mat, int i0, int j0)
             }
         }
     }
+
+    return n;
 }
 
